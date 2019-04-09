@@ -426,7 +426,7 @@ def test_sid_in_mqs():
     for q in qs:
 
         try:
-            mq_channel.basic_consume(callback, queue=q, no_ack=True)
+            mq_channel.basic_consume(q, callback, no_ack=True)
         except Exception as ex:
             raise EnTKError(ex)
 
